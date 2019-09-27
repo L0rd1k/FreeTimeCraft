@@ -12,12 +12,7 @@
 | 9 | Edge Tracking by Hysteresis: transforming weak pixels into strong ones, if and only if at least one of the pixels around the one being processed is a strong one. ![Alt-текст](https://github.com/L0rd1k/WolrdAroundPython/blob/master/Images/Canny/Hysteresis.png "Smoothed") | ![Alt-текст](https://github.com/L0rd1k/WolrdAroundPython/blob/master/Images/Canny/canny_result.jpg "Smoothed")  |
 ____
 2) Gaussian Smoothing Filter
-____
 3) Sobel Edge Detector
-____
 4) HOG(Histogram of oriented gradients) descriptor
-____
 5) Laplacian edge detector
-____
 7) HOG + SVM template matching
-____
