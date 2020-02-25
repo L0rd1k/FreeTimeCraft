@@ -9,3 +9,5 @@
 9) Laplacian edge detector
 10) HOG + SVM template matching
 11) Shi-Tomasi Corner Detector
+12) Selective Search
+
