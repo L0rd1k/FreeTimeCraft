@@ -1,0 +1,224 @@
+OBJECTID,NAME,ADDRESS,ZIPCODE,ADDRESS_ID
+1,Adams Bank,"802 7th Street, NW ",20001,243178
+2,Adams Bank,"50 Massachusetts, Avenue, SE",20002,293243
+3,Adams Bank,"1501 K Street, NW",20006,279201
+4,Adams Bank,"1729 Wisconsin Ave, NW",20007,275259
+5,Adams Bank,"1604 17th Street, NW",20009,241674
+6,Adams Bank,"1130 Connecticut Ave, NW",20036,241787
+7,Amalgamated Bank,"1825 K Street, NW",20006,240969
+8,American Bank,5600 Connecticut Avenue NW,20015,263862
+9,"Bank of America, NA","635 Massachusetts Avenue, NW",20001,279868
+10,"Bank of America, NA","722 H Street, NE",20002,149093
+11,"Bank of America, NA","201 Pennsylvania Avenue, SE",20003,52920
+12,"Bank of America, NA","1001 Pennsylvania Avenue, NW",20004,239376
+13,"Bank of America, NA","1501 Pennsylvania Avenue, NW",20005,279202
+14,"Bank of America, NA","1090 Vermont Avenue, NW",20005,240259
+15,"Bank of America, NA","700 13th Street, NW",20005,240654
+16,"Bank of America, NA","888 17th Street, NW",20006,218778
+17,"Bank of America, NA","1801 K Street, NW",20006,279398
+18,"Bank of America, NA","2001 Pennsylvania Avenue, NW",20006,243321
+19,"Bank of America, NA","1339 Wisconsin Avenue, NW",20007,223694
+20,"Bank of America, NA","3401 Connecticut Avenue, NW",20008,275650
+21,"Bank of America, NA","2631 Connecticut Avenue, NW",20008,284444
+22,"Bank of America, NA","4201 Connecticut Avenue, NW",20008,220631
+23,"Bank of America, NA","1835 Columbia Road, NW",20009,295012
+24,"Bank of America, NA","3131 Mt. Pleasant Street, NW",20010,284590
+25,"Bank of America, NA","3500 Georgia Avenue, NW",20010,232241
+26,"Bank of America, NA","5911 Blair Road, NW",20011,245610
+27,"Bank of America, NA","5201 Wisconsin Avenue, NW",20016,274083
+28,"Bank of America, NA","4301 49th Street, NW",20016,266468
+29,"Bank of America, NA","915 Rhode Island Avenue, NW",20018,239706
+30,"Bank of America, NA","3821 Minnesota Avenue, NE",20019,30095
+31,"Bank of America, NA","2100 Martin Luther King Jr., SE",20020,51883
+32,"Bank of America, NA","401 M Street, SW",20024,28161
+33,"Bank of America, NA","4675 South Capitol Street, SW",20032,276659
+34,"Bank of America, NA","3 Dupont Circle, NW",20036,302539
+35,"Bank of America, NA","3700 North Capitol Street, NW",20317,291848
+36,"Bank of America, NA","2201 C Street, NW",20520,243360
+37,Bank of Georgetown,"1001 Wisconsin Avenue, NW",20007,295206
+38,Bank of Georgetown,"5236 44th Street, NW",20015,267737
+39,Branch Banking and Trust Company,"614 H Street, NW",20001,295092
+40,Branch Banking and Trust Company,"317 Pennsylvania Avenue, SE",20003,278338
+41,Branch Banking and Trust Company,"601 13th Street, NW",20005,240933
+42,Branch Banking and Trust Company,"1909 K Street, NW",20006,243209
+43,Branch Banking and Trust Company,"815 Connecticut Avenue, NW",20006,218768
+44,Branch Banking and Trust Company,"1365 Wisconsin Avenue, NW",20007,223699
+45,Branch Banking and Trust Company,"1316 U Street, NW",20009,279046
+46,Branch Banking and Trust Company,"1801 Adams Mill Road, NW",20009,218493
+47,Branch Banking and Trust Company,"5200 Wisconsin Avenue, NW",20015,265898
+48,Branch Banking and Trust Company,"1730 Rhode Island Avenue, NW",20036,241782
+49,Cardinal Bank,"1776 K Street, NW",20006,236718
+50,"Chevy Chase Bank, F.S.B.","901 New York Avenue, NW",20001,300397
+51,"Chevy Chase Bank, F.S.B.","1100 New Jersey Avenue, SE",20003,285822
+52,"Chevy Chase Bank, F.S.B.","336 Pennsylvania Avenue, SE",20003,300706
+53,"Chevy Chase Bank, F.S.B.","650 F Street, NW",20004,302652
+54,"Chevy Chase Bank, F.S.B.","1200 F Street, NW",20004,300895
+55,"Chevy Chase Bank, F.S.B.",701 Pennsylvania Avenue NW,20004,279889
+56,"Chevy Chase Bank, F.S.B.",1299 Pennsylvania Avenue NW,20004,285503
+57,"Chevy Chase Bank, F.S.B.","925 15th Street, NW",20005,218798
+58,"Chevy Chase Bank, F.S.B.",1717 Pennsylvania Avenue NW,20006,279332
+59,"Chevy Chase Bank, F.S.B.",1850 K Street NW,20006,300932
+60,"Chevy Chase Bank, F.S.B.","1700 K Street, NW",20006,243334
+61,"Chevy Chase Bank, F.S.B.",1545 Wisconsin Avenue NW,20007,223930
+62,"Chevy Chase Bank, F.S.B.",4455 Connecticut Avenue NW,20008,284922
+63,"Chevy Chase Bank, F.S.B.","3519 Connecticut Avenue, NW",20008,295765
+64,"Chevy Chase Bank, F.S.B.",5714 Connecticut Avenue NW,20015,285262
+65,"Chevy Chase Bank, F.S.B.",4400 Massachusetts Avenue NW,20016,223994
+66,"Chevy Chase Bank, F.S.B.",4860 Massachusetts Avenue NW,20016,266470
+67,"Chevy Chase Bank, F.S.B.",4000 Wisconsin Avenue NW,20016,222230
+68,"Chevy Chase Bank, F.S.B.",210 Michigan Avenue NE,20017,286613
+69,"Chevy Chase Bank, F.S.B.",2831 Alabama Avenue SE,20020,278276
+70,"Chevy Chase Bank, F.S.B.",1100 17th Street NW,20036,241793
+71,"Chevy Chase Bank, F.S.B.",1800 M Street NW,20036,241302
+72,"Chevy Chase Bank, F.S.B.","2400 M Street, NW",20037,301450
+73,"Chevy Chase Bank, F.S.B.","3800 Reservoir Road, NW",20057,291547
+74,"Citibank, NA ",600 Pennsylvania Ave. SE,20003,5839
+75,"Citibank, NA ",1000 Vermont Ave. NW,20005,240261
+76,"Citibank, NA ",1400 G Street NW,20005,301002
+77,"Citibank, NA ",1775 Pennsylvania Ave NW,20006,279383
+78,"Citibank, NA ",1901 Wisconsin Ave. NW,20007,279450
+79,"Citibank, NA ",1749 1/2 Columbia Rd. NW,20009,302977
+80,"Citibank, NA ",5700 Connecticut Ave. NW,20015,274635
+81,"Citibank, NA ",5250 Mac Arthur Blvd. NW,20016,285144
+82,"Citibank, NA ",5001 Wisconsin Ave. NW,20016,266053
+83,"Citibank, NA ",3800 12th Street NE,20017,30632
+84,"Citibank, NA ",3917 Minnesota Ave. NE,20019,29135
+85,"Citibank, NA ",1225 Connecticut Ave. NW,20036,241767
+86,"Citibank, NA ",1000 Connecticut Ave. NW,20036,243406
+87,"Citibank, NA ",1101 Pennsylvania Ave. NW,20004,242893
+88,"City First Bank of D.C., NA","1432 U Street, NW",20009,279168
+89,"Commerce Bank, NA","1753 Connecticut Ave, NW ",20009,300676
+90,EagleBank,"1425 K Street, NW",20005,240264
+91,EagleBank,2001 K Street NW,20006,242788
+92,EagleBank,1228 Connecticut Avenue NW,20036,302357
+93,E*Trade Bank,"1850 K Street, NW",20006,300932
+94,Fidelity & Trust Bank,1725 Eye Street NW,20006,279349
+95,Fidelity & Trust Bank,1044 Wisconsin Avenue NW,20007,278800
+96,"HSBC Bank USA, NA","3100 Massachuesetts Avenue, NW",20008,284577
+97,"HSBC Bank USA, NA","1130 Connecticut Avenue, NW",20036,241787
+98,Independence Federal Savings Bank,1006-E Street NW,20004,298260
+99,Independence Federal Savings Bank,1020-19th St. NW,20036,242546
+100,Independence Federal Savings Bank,1229 Connecticut Ave. NW,20036,278975
+101,"Industrial Bank, National Association","2000 11th Street, NW",20001,218578
+102,"Industrial Bank, National Association","1317 F Street, NW",20005,240661
+103,"Industrial Bank, National Association","2000 14th Street, NW",20009,239976
+104,"Industrial Bank, National Association","4812 Georgia Avenue, NW",20011,252851
+105,"Industrial Bank, National Association","2012 Rhode Island Avenue, NW",20018,286592
+106,"Industrial Bank, National Association","125 45th Street, NE",20019,285981
+107,"J. P. Morgan Trust Company, National Association","800 Connecticut Avenue, NW",20006,301059
+108,Manufacturers and Traders Trust Company,555 12th Street NW,20004,239135
+109,Manufacturers and Traders Trust Company,"1680 K Street, NW",20006,300674
+110,Manufacturers and Traders Trust Company,"2620 Connecticut Avenue, NW",20008,219094
+111,Manufacturers and Traders Trust Company,"6434 Georgia Avenue, NW",20012,253291
+112,Manufacturers and Traders Trust Company,"5630 Connecticut Avenue, NW",20015,263863
+113,Manufacturers and Traders Trust Company,"2865 Alabama Avenue, SE",20020,278292
+114,Manufacturers and Traders Trust Company,"500 C Street, SW",20024,276666
+115,Manufacturers and Traders Trust Company,"1899 L Street, NW",20036,241298
+116,Mercantile-Safe Deposit and Trust Company,"1100 H Street, NW",20005,239128
+117,Mercantile-Safe Deposit and Trust Company,1629 K Street NW,20006,242031
+118,The National Capital Bank of Washington,"316 Pennsylvania Avenue, SE",20003,39317
+119,The National Capital Bank of Washington,"5228 44th Street, NW",20015,267740
+120,NCB FSB,"1725 Eye Street, NW",20006,279349
+121,OBA Federal Savings Bank,600 F Street NW,20004,238713
+122,"PNC Bank, National Association","833 7th Street, NW",20001,300518
+123,"PNC Bank, National Association","1348 Fourth Street, NE",20002,286090
+124,"PNC Bank, National Association","800 H Street, NE",20002,151153
+125,"PNC Bank, National Association","650 Pennsylvania Avenue, SE",20003,280033
+126,"PNC Bank, National Association","301 7th Street, NW",20004,293231
+127,"PNC Bank, National Association",1331 Pennsylvania Avenue NW,20004,279081
+128,"PNC Bank, National Association","1400 K Street, NW",20005,240269
+129,"PNC Bank, National Association","1503 Pennsylvania Avenue, NW",20005,243359
+130,"PNC Bank, National Association","1101 15th Street, NW",20005,243422
+131,"PNC Bank, National Association","800 17th Street, NW",20006,218758
+132,"PNC Bank, National Association","1919 Pennsylvania Avenue, NW",20006,241082
+133,"PNC Bank, National Association","1201 Wisconsin Ave, NW",20007,272025
+134,"PNC Bank, National Association","3400 International Drive, NW",20008,301239
+135,"PNC Bank, National Association","1779 Columbia Road, NW",20009,235934
+136,"PNC Bank, National Association","1875 Connecticut Ave, NW",20009,242828
+137,"PNC Bank, National Association","3300 14th Street, NW",20010,234465
+138,"PNC Bank, National Association","7601 Georgia Avenue, NW",20012,253715
+139,"PNC Bank, National Association","5252 Wisconsin Avenue, NW",20015,265899
+140,"PNC Bank, National Association","2550 M Street, NW",20015,277177
+141,"PNC Bank, National Association","5530 Connecticut Avenue, NW",20015,263837
+142,"PNC Bank, National Association","4249 Wisconsin Avenue, NW",20016,303170
+143,"PNC Bank, National Association","4835 Massachusetts Avenue, NW",20016,269570
+144,"PNC Bank, National Association","3806 12th Street, NE",20017,156248
+145,"PNC Bank, National Association","2000 Martin Luther King, Jr., SE",20020,151471
+146,"PNC Bank, National Association","935 L'enfant Plaza North, SW ",20024,303666
+147,"PNC Bank, National Association","4100 South Capitol Street, SW ",20032,27051
+148,"PNC Bank, National Association","1920 L Street, NW",20036,242545
+149,"PNC Bank, National Association","1800 M Street, NW",20036,241302
+150,"PNC Bank, National Association","1913 Massachusetts Avenue, NW",20036,300942
+151,"PNC Bank, National Association","2600 Virginia Avenue, NW",20037,279603
+152,"Presidential Bank, FSB",1660 K Street NW,20006,279290
+153,Provident Bank of Maryland,1055 Thomas Jefferson St NW,20007,278803
+154,SunTrust Bank,"624 H Street, NW",20001,242976
+155,SunTrust Bank,"2 Massachusetts Avenue, NW",20001,237154
+156,SunTrust Bank,"410 Rhode Island Avenue, NE",20002,288105
+157,SunTrust Bank,"1601 Maryland Avenue, NE",20002,297814
+158,SunTrust Bank,"300 Pennsylvania Avenue, SE",20003,278302
+159,SunTrust Bank,415 14th Street SE,20003,26239
+160,SunTrust Bank,"1275 K Street, NW",20005,243281
+161,SunTrust Bank,"1100 G Street, NW",20005,303213
+162,SunTrust Bank,"1445 New York Avenue, NW",20005,218285
+163,SunTrust Bank,900 17th St NW,20006,279977
+164,SunTrust Bank,"1750 New York Avenue, NW",20006,279376
+165,SunTrust Bank,"1925 K Street, NW",20006,242548
+166,SunTrust Bank,"2929 M Street, NW",20007,272083
+167,SunTrust Bank,"1800 Columbia Road, NW",20009,235413
+168,SunTrust Bank,1250 U Street NE,20009,297746
+169,SunTrust Bank,"5601 Third Street, NE",20011,301560
+170,SunTrust Bank,"6422 Georgia Avenue, NW",20012,285336
+171,SunTrust Bank,"5000 Connecticut Avenue, NW",20015,285038
+172,SunTrust Bank,"3301 New Mexico Avenue, NW",20016,223997
+173,SunTrust Bank,"3440 Wisconsin Avenue, NW",20016,221505
+174,SunTrust Bank,"1340 Good Hope Road, SE",20020,66569
+175,SunTrust Bank,"1571 Alabama Avenue, SE",20020,277958
+176,SunTrust Bank,2845 Alabama Ave SE,20020,278282
+177,SunTrust Bank,"965 L'enfant Plaza North, SE",20024,301847
+178,SunTrust Bank,"1111 Connecticut Avenue, NW",20036,303362
+179,SunTrust Bank,"1369 Connecticut Avenue, NW",20036,241264
+180,United Bank,"1001 G Street, NW",20001,239369
+181,United Bank,"1875 Eye Street, NW",20004,279443
+182,United Bank,"1275 Pennsylvania Avenue, NW",20004,300418
+183,United Bank,"1667 K Street, NW",20006,279291
+184,United Bank,"3050 Military Road, NW",20015,274717
+185,United Bank,"4900 Massachusetts Avenue, NW",20016,269772
+186,United Bank,"2301 M Street, NW",20037,242336
+187,"United States Trust Company , National Association","600 14th Street, NW",20005,300970
+188,Urban Trust Bank,"1350 I Street, NW",20005,240651
+189,"Wachovia Bank, National Association","2801 Georgia Avenue, NW",20001,243383
+190,"Wachovia Bank, National Association","600 Maryland Avenue, SW",20024,5831
+191,"Wachovia Bank, National Association","1300 Connecticut Avenue, NW",20036,218073
+192,"Wachovia Bank, National Association","1100 Connecticut Avenue, NW",20036,243303
+193,"Wachovia Bank, National Association","2000 L Street, NW",20036,243349
+194,"Wachovia Bank, National Association","1850 M Street, NW",20036,241300
+195,"Wachovia Bank, National Association","502 23rd Street, NW",20037,298794
+196,WashingtonFirst Bank,"1500 K Street, NW",20006,242333
+197,WashingtonFirst Bank,"1025 Connecticut Avenue, NW",20036,241803
+198,WashingtonFirst Bank,1146 19th Street NW,20036,241070
+199,"Wachovia Bank, National Association","444 North Capitol Street, NW",20001,279785
+200,"Wachovia Bank, National Association","215 Pennsylvania Avenue, SE",20003,278073
+201,"Wachovia Bank, National Association","801 Pennsylvania Avenue, NW",20004,279946
+202,"Wachovia Bank, National Association","1301 Pennsylvania Avenue, NW",20004,279023
+203,"Wachovia Bank, National Association","740 15th Street, NW",20005,293256
+204,"Wachovia Bank, National Association","1310 G Street, NW",20005,240663
+205,"Wachovia Bank, National Association","1510 K Street, NW",20005,242332
+206,"Wachovia Bank, National Association","1445 P Street, NW",20005,297788
+207,"Wachovia Bank, National Association","1300 Eye Street, NW",20005,240649
+208,"Wachovia Bank, National Association","1700 Pennsylvania Avenue, NW",20006,218408
+209,"Wachovia Bank, National Association","1800 K Street, NW",20006,300930
+210,"Wachovia Bank, National Association","2901 M Street, NW",20007,272085
+211,"Wachovia Bank, National Association","3700 Calvert Street, NW",20007,271794
+212,"Wachovia Bank, National Association","4340 Connecticut Ave, NW",20008,223153
+213,"Wachovia Bank, National Association","3325 14th Street, NW",20010,300784
+214,"Wachovia Bank, National Association","5100 Wisconsin Avenue, NW",20015,265883
+215,"Wachovia Bank, National Association",5701 Connecticut Ave NW,20015,263948
+216,"Wachovia Bank, National Association","4841 Massachusetts Avenue, NW",20016,284990
+217,"Wachovia Bank, National Association","5201 Macarthur Boulevard, NW",20016,268708
+218,"Wachovia Bank, National Association","2119 Bladensburg Road, NE",20018,51509
+219,"Wachovia Bank, National Association",3915 B Dix St NE,20019,300610
+220,"Wachovia Bank, National Association","3200 Pennsylvania Avenue, SE",20020,287751
+221,"Chevy Chase Bank, F.S.B.","Ronald Reagan Nat. Airport, NW ",20001,
+222,"Bank of America, NA","1244 Patterson Avenue SE, Bldg 22 ",20374,
+223,"Bank of America, NA","185 Chappie James Boulevard, SE ",20332,
