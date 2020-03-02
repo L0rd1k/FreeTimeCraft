@@ -1,4 +1,6 @@
 
+### Computer Vision Algorithms
+
 | Name | Description |
 |----------------|-----------------|
 |1) Canny Edge Detector||
@@ -14,6 +16,17 @@
 |11) Shi-Tomasi Corner Detector||
 |12) Selective Search||
 
+### My Projects
+
+- [X] SelfDrivingCar 
+    - [ ] ContourApproximation
+    - [ ] Segmentation
+- [X] Runway Detection
+    - [ ] SegmentSkyRegion
+- [X] NeuralNetwork && DataScience 
+    - [ ] Data Analysis with Pandas
+    - [ ] Data Visualization with Pandas
+    - [ ] QualityMetrics,Validation,kNN
 
 
 
