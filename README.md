@@ -18,15 +18,11 @@
 
 ### My Projects
 
-- [X] SelfDrivingCar 
-    - [ ] ContourApproximation
-    - [ ] Segmentation
-- [X] Runway Detection
-    - [ ] SegmentSkyRegion
-- [X] NeuralNetwork && DataScience 
-    - [ ] Data Analysis with Pandas
-    - [ ] Data Visualization with Pandas
-    - [ ] QualityMetrics,Validation,kNN
+| SelfDrivingCar | Runway Detection | NeuralNetwork && DataScience 
+|----------------|-----------------|-------------------|
+|Contour Approximation|SegmentSkyRegion|Data Analysis with Pandas|
+|Segmentation||Data Visualization with Pandas|
+|||QualityMetrics,Validation,kNN|
 
 
 
