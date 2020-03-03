@@ -7,7 +7,7 @@
 |2) Gaussian Smoothing Filter|![alt text](https://miro.medium.com/max/525/1*YpLYVBomcYNNbwncG5iP9Q.png)|
 |3) Harris Corner Detector||
 |4) Hough Transformation||
-|5) Laplacian Of Gaussian Corner Detector(LoG)||
+|5) Laplacian Of Gaussian Corner Detector(LoG)|![alt_text](https://i0.wp.com/theailearner.com/wp-content/uploads/2019/05/log1.png?w=625&ssl=1)<br/>f - image && g - Gaussian kernel<br/>![alt_text](https://i2.wp.com/theailearner.com/wp-content/uploads/2019/05/Lapeq.png?w=610&ssl=1)|
 |6) Shaar Edge Detector||
 |7) Sobel Edge Detector| ![alt text](https://miro.medium.com/max/276/1*r5Y22pLJjDMl19tcqXseZQ.png)<br/>Magnitude G and the slope θ of the gradient<br/>![alt text](https://miro.medium.com/max/147/1*HmperNZ1AXXNONDbrsJNAg.png) |
 |8) HOG(Histogram of oriented gradients) descriptor||
