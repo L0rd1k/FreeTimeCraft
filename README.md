@@ -3,7 +3,7 @@
 
 | Name | Description |
 |----------------|:-----------------:|
-|1) Canny Edge Detector|-Noise reduction<br/>-Gradient calculation (Sobel filters)<br/>-Non-maximum suppression<br/>-Double threshold<br/>-Edge Tracking by  Hysteresis.|
+|1) Canny Edge Detector||
 |2) Gaussian Smoothing Filter||
 |3) Harris Corner Detector||
 |4) Hough Transformation||
