@@ -17,16 +17,6 @@
 |12) Selective Search||
 |13) Prewitt’s Operator||
 
-### My Projects
-
-| SelfDrivingCar | Runway Detection | NeuralNetwork && DataScience 
-|----------------|-----------------|-------------------|
-|Contour Approximation|SegmentSkyRegion|Data Analysis with Pandas|
-|Segmentation||Data Visualization with Pandas|
-|||QualityMetrics,Validation,kNN|
-
-
-
 
 
 
