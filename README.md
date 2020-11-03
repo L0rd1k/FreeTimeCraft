@@ -1,6 +1,4 @@
 
-### Computer Vision Algorithms
-
 
 
 
