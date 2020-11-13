@@ -64,7 +64,7 @@ def main(argv):
         he.gpuOutput()
     elif(value == '4'):
         model = he.buildModel()
-        model = he.loadWeights(model,"./weights_Main_2000/model_1000_val_mse154801.5156.hdf5")
+        model = he.loadWeights(model, "./weights_Main_2000/model_1000_val_mse154801.5156.hdf5")
         he.predictByImageSet(model)
     elif (value == '5'):
         model = he.buildModel()
