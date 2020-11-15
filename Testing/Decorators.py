@@ -25,7 +25,6 @@ def register_decorator(func):
 
 # ==========================================================================
 
-
 #@timer_decorator
 @register_decorator
 def waste_some_time(num_times):
