@@ -5,7 +5,20 @@ import sys
 import cv2
 import os
 import random
+
+
 def main(argv):
+    '''
+        1. GENERATE TRAINING DATASET
+        2. PROCESSING DATASET's IAMGES
+    '''
+    # dsm.DatasetGenerator(100, 500, 50, "/opt/data/Anna/sasmap18.jpg")
+    #
+
+
+
+
+
     # cap = cv2.VideoCapture("/home/ilya/NetBeansProjects/os/build/OSRecordsPlayer/videos/video_2_2020-06-08 15:14:37.avi")
     # fast_d = fd.FastUndistort()
     #
@@ -38,38 +51,38 @@ def main(argv):
     #     # dist = fdr.undistort("/home/ilya/intrinsics_down.yml", image)
     #     cv2.imwrite(str(generalDataSet[itr]), dist)
 
-    he = h_est.HeightEstimator(1, 32)
-    print("1 - Datset Generator\n2 - Train Dataset\n3 - Check GPU existance\n4 - Predict by image\n5 - Predict by video\n")
-    global path
-    path = "/opt/data/CNN/dataset_map2" if (len(argv) == 1) else argv[1]
-    value = input("Input your value: ")
-    if(value == '1'):
-        print("Dataset generator\n")
-        dsm.generateDesirableHeights(100, 10000, 50)
-        mapImage = dsm.loadMap("/opt/data/Anna/sasmap18.jpg")
-        dsm.getMapInfo(mapImage)
-        dsm.cutMapImage(mapImage, "/opt/data/Anna/SAVE")
-    elif(value == '2'):
-        print("Dataset training\n")
-        general_dataset = he.loadDataSet(path)
-        images, labels = he.processDataSet(general_dataset, 248, 248)
-        image_train, image_test, label_train, label_test = he.splitDataTrainAndTest(images, labels)
-        model = he.buildModel()
-        # model, history = he.trainModel(model, image_train, label_train)
-        # he.showTrainingTable(history)
-        model = he.loadWeights(model,"./weights_Main_2000/model_2000_val_mse179197.1094.hdf5")
-        he.pedictHeight(model, image_test, label_test, image_train, label_train)
-    elif(value == '3'):
-        print("GPU output\n")
-        he.gpuOutput()
-    elif(value == '4'):
-        model = he.buildModel()
-        model = he.loadWeights(model, "./weights_Main_2000/model_1000_val_mse154801.5156.hdf5")
-        he.predictByImageSet(model)
-    elif (value == '5'):
-        model = he.buildModel()
-        model = he.loadWeights(model, "./weights_Main_2000/model_1000_val_mse154801.5156.hdf5")
-        he.predictByVideo(model)
+    #he = h_est.HeightEstimator(1, 32)
+
+    # print("1 - Datset Generator\n2 - Train Dataset\n3 - Check GPU existance\n4 - Predict by image\n5 - Predict by video\n")
+    # global path
+    # path = "/opt/data/CNN/dataset_map2" if (len(argv) == 1) else argv[1]
+    # value = input("Input your value: ")
+    #
+    # if(value == '1'):
+    #     print("Dataset generator")
+    #     dataset_mk = dsm.DatasetGenerator(100, 500, 50, "/opt/data/Anna/sasmap18.jpg")
+    # elif(value == '2'):
+    #     print("Dataset training\n")
+    #     general_dataset = he.loadDataSet(path)
+    #     images, labels = he.processDataSet(general_dataset, 248, 248)
+    #     image_train, image_test, label_train, label_test = he.splitDataTrainAndTest(images, labels)
+    #     model = he.buildModel()
+    #     # model, history = he.trainModel(model, image_train, label_train)
+    #     # he.showTrainingTable(history)
+    #     model = he.loadWeights(model,"./weights_Main_2000/model_2000_val_mse179197.1094.hdf5")
+    #     he.pedictHeight(model, image_test, label_test, image_train, label_train)
+    # elif(value == '3'):
+    #     print("GPU output\n")
+    #     he.gpuOutput()
+    # elif(value == '4'):
+    #     model = he.buildModel()
+    #     model = he.loadWeights(model, "./weights_Main_2000/model_1000_val_mse154801.5156.hdf5")
+    #     he.predictByImageSet(model)
+    # elif (value == '5'):
+    #     model = he.buildModel()
+    #     model = he.loadWeights(model, "./weights_Main_2000/model_1000_val_mse154801.5156.hdf5")
+    #     he.predictByVideo(model)
+
 
 if __name__ == "__main__":
     main(sys.argv)
