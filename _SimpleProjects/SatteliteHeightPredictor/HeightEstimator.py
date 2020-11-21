@@ -11,11 +11,19 @@ import random
 import gc
 
 import FastDistortion as fd
+import Utils.UsefulTools as ut
 
 class HeightEstimator:
     def __init__(self, epoch, b_size):
         self.epoch = epoch
         self.batch_size = b_size
+        self.mainLoop()
+
+    def mainLoop(self):
+        default_path = "./Dataset"
+        dataset_list = self.loadDataSet(default_path)
+        images, labels = self.processDataSet(dataset_list, 512, 512)
+        self.splitDataTrainAndTest(images, labels)
 
     def gpuOuput(self):
         print(device_lib.list_local_devices())
@@ -24,6 +32,8 @@ class HeightEstimator:
         head, tail = ntpath.split(path)
         return tail or ntpath.basename(head)
 
+
+    @ut.timer
     def loadDataSet(self, datasetPath):
         generalDataSet = [datasetPath + '/{}'.format(i) for i in os.listdir(datasetPath)]
         random.shuffle(generalDataSet)
@@ -32,34 +42,37 @@ class HeightEstimator:
         return generalDataSet
 
 
+    @ut.timer
     def processDataSet(self, list_of_images, nrows, ncols):
         images = list()
         labels = list()
         for itr, img_path in enumerate(list_of_images):
-            images.append(cv.resize(cv.imread(img_path, cv.IMREAD_COLOR), (nrows, ncols), interpolation=cv.INTER_CUBIC))
             image_values = list()
+            images.append(cv.resize(cv.imread(img_path, cv.IMREAD_COLOR), (nrows, ncols), interpolation=cv.INTER_CUBIC))
             [image_values.append(int(float(s))) for s in re.findall(r'-?\d+\.?\d*', self.pathLeaf(img_path))]
             labels.append(int(image_values[0]))
-        print("Images/Labels : " + str(len(images)) + "/" + str(len(labels)))
         return images, labels
 
+
+    @ut.timer
     def splitDataTrainAndTest(self, images, labels):
         np_images = np.array(images)
         np_labels = np.array(labels)
-        image_train, image_test, label_train, label_test = train_test_split(np_images, np_labels, test_size=0.20, random_state=2)
-        print("Shape of image_train:", image_train.shape)
-        print("Shape of image_test:", image_test.shape)
-        print("Shape of label_train:", label_train.shape)
-        print("Shape of label_test:", label_test.shape)
-        image_train = image_train.astype('float32')
-        image_test = image_test.astype('float32')
-        label_train = label_train.astype('float32')
-        label_test = label_test.astype('float32')
-        image_train /= 255
-        image_test /= 255
+
+        # image_train, image_test, label_train, label_test = train_test_split(np_images, np_labels, test_size=0.20, random_state=2)
+        # print("Shape of image_train:", image_train.shape)
+        # print("Shape of image_test:", image_test.shape)
+        # print("Shape of label_train:", label_train.shape)
+        # print("Shape of label_test:", label_test.shape)
+        # image_train = image_train.astype('float32')
+        # image_test = image_test.astype('float32')
+        # label_train = label_train.astype('float32')
+        # label_test = label_test.astype('float32')
+        # image_train /= 255
+        # image_test /= 255
         # label_train /= 10000
         # label_test /= 10000
-        return image_train, image_test, label_train, label_test
+        # return image_train, image_test, label_train, label_test
 
     def buildModel(self):
         model = models.Sequential()

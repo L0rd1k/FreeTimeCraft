@@ -1,10 +1,11 @@
 from imutils import paths
+import GammaCorection as gmc
 import argparse
 import matplotlib.pyplot as plt
 import cv2
+import os
 
 __author__ = "Ilya Petrikov"
-
 
 class BlurDetector:
     def __init__(self):
@@ -24,45 +25,64 @@ ap.add_argument("-i", "--images", required=True, help="path to input directory o
 ap.add_argument("-t", "--threshold", type=float, default=100.0, help="focus measures that fall below this value will be considered 'blurry'")
 args = vars(ap.parse_args())
 
-
 mat_list = list()
 focus_measure_list = list()
+
+gamma_measure_list = list()
+
 counterPlus = 0
 counter = 0
-for itr, imagePath in enumerate(paths.list_images(args["images"])):
-    print("{} - {}".format(itr, imagePath))
+
+img_list = list(paths.list_images(args["images"]))
+img_list.sort(key=os.path.getmtime)
+for itr, imagePath in enumerate(img_list):
     image = cv2.imread(imagePath)
+
     fm = BlurDetector.getBluring(image)
+    """ with gamma """
+    gamma_image = gmc.adjust_gamma(image, gamma=0.75)
+    fm_gamma = BlurDetector.getBluring(gamma_image)
+
+    print("{} - {} - {}".format(itr, imagePath, fm))
     text = "Not Blurry"
-    # focus_measure_list.append(fm)
-    if fm < args["threshold"]:
-        focus_measure_list.update({itr: fm})
+    focus_measure_list.append(fm)
+    gamma_measure_list.append(fm_gamma)
+    if fm_gamma < args["threshold"]:
+        focus_measure_list.append(fm)
         mat_list.append(image)
         counterPlus += 1
         text = "Blurry"
     counter += 1
 
+
+
 print("Min {} / Max {}".format(min(focus_measure_list), max(focus_measure_list)))
 print("{} / {}".format(counter, counterPlus))
 
+percentage = (counterPlus * 100) / counter
 
-dict = dict(zip(range(len(focus_measure_list), focus_measure_list)))
-
-print(dict)
 
 fig = plt.figure(figsize=(10, 5))
 plt.scatter(range(len(focus_measure_list)), focus_measure_list, s=3, edgecolors='none', c='green')
-plt.scatter(5, 5, s=10, edgecolors='none', c='red')
+plt.scatter(range(len(gamma_measure_list)), gamma_measure_list, s=3, edgecolors='none', c='orange')
+
+
+plt.plot([0, len(focus_measure_list)], [args["threshold"], args["threshold"]],  color='red', linestyle='dashed', marker='o', markerfacecolor='blue', markersize=1)
+
+
+ax = fig.add_subplot(111)
+ax.set_xlabel('Images [I]')
+ax.set_ylabel('Quality [Q]')
+
+ax.text(0.9, 1, "Amount: {} / Below threshold: {} \n Percentage1: {} %".format(counter, counterPlus, format(percentage,'.2f')),
+        horizontalalignment='right', verticalalignment='top', transform=ax.transAxes)
+
 plt.legend()
 plt.show()
 
+# for elem in mat_list:
+#     cv2.putText(image, "{}: {:.2f}".format(text, fm), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 3)
+#     cv2.imshow("Image", image)
+#     key = cv2.waitKey(0)
 
-
-#for elem in mat_list:
-#    cv2.imshow("Image", elem)
-#    key = cv2.waitKey(0)
-    #cv2.putText(image, "{}: {:.2f}".format(text, fm), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 3)
-    #cv2.imshow("Image", image)
-    #key = cv2.waitKey(0)
-
-#cv2.destroyAllWindows()
+cv2.destroyAllWindows()

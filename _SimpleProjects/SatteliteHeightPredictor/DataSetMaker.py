@@ -15,19 +15,16 @@ class DatasetGenerator:
         self.__mapPath = map
         self.__generateUsableHeights()
 
-
     def __generateUsableHeights(self):
         print("... height generation in process ...")
         for itr, elem in enumerate(range(self.__minHeight, self.__maxHeight + 1, self.__step)):
             self.heightsList.append(int(elem))
         self.__getMapInfo(self.__loadMap())
 
-
     def __loadMap(self):
         print("... map loading ... ")
         original_map = cv.imread(self.__mapPath)
         return original_map
-
 
     def __getMapInfo(self, mapImage):
         print("... map data processing ... ")
@@ -45,7 +42,6 @@ class DatasetGenerator:
 
         self.__cutMapImage(mapImage)
 
-
     def __cutMapImage(self, mapImage):
         print("... cutting map for dataset ... ")
         height, width, channels = mapImage.shape
@@ -58,7 +54,6 @@ class DatasetGenerator:
                 self.__slicingOperation(mapImage, "./Dataset", itr, height, width, curDimensions)
 
         print("All images saved!!!" + str(sum(self.numberOfImages)))
-
 
     def __slicingOperation(self, mapImage, datasetFolderPath, itr, height, width, curDimensions):
         print("-> Number of images to generate: " + str(self.numberOfImages[itr]))

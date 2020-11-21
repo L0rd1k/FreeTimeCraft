@@ -1,5 +1,5 @@
 import DataSetMaker as dsm
-import HeightEstimator as h_est
+import HeightEstimator as he
 import FastDistortion as fd
 import sys
 import cv2
@@ -10,14 +10,11 @@ import random
 def main(argv):
     '''
         1. GENERATE TRAINING DATASET
-        2. PROCESSING DATASET's IAMGES
+        2. PROCESSING DATASET's IMAGES
+        3. AUGMENTATION DATASET
     '''
     # dsm.DatasetGenerator(100, 500, 50, "/opt/data/Anna/sasmap18.jpg")
-    #
-
-
-
-
+    he.HeightEstimator(32, 24)
 
     # cap = cv2.VideoCapture("/home/ilya/NetBeansProjects/os/build/OSRecordsPlayer/videos/video_2_2020-06-08 15:14:37.avi")
     # fast_d = fd.FastUndistort()
@@ -52,6 +49,8 @@ def main(argv):
     #     cv2.imwrite(str(generalDataSet[itr]), dist)
 
     #he = h_est.HeightEstimator(1, 32)
+
+    """ PASS """
 
     # print("1 - Datset Generator\n2 - Train Dataset\n3 - Check GPU existance\n4 - Predict by image\n5 - Predict by video\n")
     # global path
