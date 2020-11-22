@@ -1,6 +1,5 @@
 import DataSetMaker as dsm
 import HeightEstimator as he
-import FastDistortion as fd
 import sys
 import cv2
 import os
@@ -8,13 +7,8 @@ import random
 
 
 def main(argv):
-    '''
-        1. GENERATE TRAINING DATASET
-        2. PROCESSING DATASET's IMAGES
-        3. AUGMENTATION DATASET
-    '''
     # dsm.DatasetGenerator(100, 500, 50, "/opt/data/Anna/sasmap18.jpg")
-    he.HeightEstimator(32, 24)
+    he.HeightEstimator(5, 32)
 
     # cap = cv2.VideoCapture("/home/ilya/NetBeansProjects/os/build/OSRecordsPlayer/videos/video_2_2020-06-08 15:14:37.avi")
     # fast_d = fd.FastUndistort()
@@ -70,9 +64,6 @@ def main(argv):
     #     # he.showTrainingTable(history)
     #     model = he.loadWeights(model,"./weights_Main_2000/model_2000_val_mse179197.1094.hdf5")
     #     he.pedictHeight(model, image_test, label_test, image_train, label_train)
-    # elif(value == '3'):
-    #     print("GPU output\n")
-    #     he.gpuOutput()
     # elif(value == '4'):
     #     model = he.buildModel()
     #     model = he.loadWeights(model, "./weights_Main_2000/model_1000_val_mse154801.5156.hdf5")
