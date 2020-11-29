@@ -15,6 +15,6 @@ def sattelite_12_layer_regression_model():
     model.add(layers.Dense(512, activation='relu'))
     model.add(layers.Dense(1))
     model.summary()
-    model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_squared_error'])
+    model.compile(loss='mean_absolute_percentage_error', optimizer='adam', metrics=['mean_squared_error'])
     # model.save("./models/model_12_layer")
     return model

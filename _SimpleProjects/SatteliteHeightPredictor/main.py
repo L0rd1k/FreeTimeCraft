@@ -8,7 +8,7 @@ import random
 
 def main(argv):
     # dsm.DatasetGenerator(100, 500, 50, "/opt/data/Anna/sasmap18.jpg")
-    he.HeightEstimator(5, 32)
+    he.HeightEstimator(100, 32)
 
     # cap = cv2.VideoCapture("/home/ilya/NetBeansProjects/os/build/OSRecordsPlayer/videos/video_2_2020-06-08 15:14:37.avi")
     # fast_d = fd.FastUndistort()

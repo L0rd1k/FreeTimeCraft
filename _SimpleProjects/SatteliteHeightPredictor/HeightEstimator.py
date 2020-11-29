@@ -10,8 +10,15 @@ from Utils.performance import timer
 import CNNModels.sattelite_regression_model as cnnmodel
 import Utils.easystring as es
 import ImageProcessing.BlurDetector as blur
+import ImageProcessing.GammaCorection as gamma
+
 
 class HeightEstimator:
+    images = list()
+    labels = list()
+    blur_list = list()
+    wrong_img = 0
+    max_height_label = 0
     def __init__(self, epoch, b_size):
         self.epoch = epoch
         self.batch_size = b_size
@@ -21,68 +28,88 @@ class HeightEstimator:
         default_path = "D:/FullDataSet/Combined"
         dataset_list = self.loadDataSet(default_path)
         images, labels = self.processDataSet(dataset_list, 248, 248)
-        # image_train, image_test, label_train, label_test = self.splitDataTrainAndTest(images, labels)
-        # model = cnnmodel.sattelite_12_layer_regression_model()
-        # model, history = self.trainModel(model, image_train, label_train)
-        # self.showTrainingTable(history)
-        # self.predictHeight(model, image_test, label_test, image_train, label_train)
+        image_train, image_test, label_train, label_test = self.splitDataTrainAndTest(images, labels)
+        model = cnnmodel.sattelite_12_layer_regression_model()
+        model, history = self.trainModel(model, image_train, label_train)
+        self.showTrainingTable(history)
+        self.predictHeight(model, image_test, label_test, image_train, label_train)
 
     @timer
     def loadDataSet(self, datasetPath):
         generalDataSet = [datasetPath + '/{}'.format(i) for i in os.listdir(datasetPath)]
         random.shuffle(generalDataSet)
-        print("General DataSet: " + str(len(generalDataSet)))
+        print("Input DataSet Size: " + str(len(generalDataSet)))
         gc.collect()
         return generalDataSet
 
+    def rotate_image(self, image):
+        angle_list = [90, 180, -90, -180]
+        random_angle = random.choice(angle_list)
+        rotated_image = cv.flip(image, random_angle)
+        return rotated_image
+
     @timer
     def processDataSet(self, list_of_images, nrows, ncols):
-        images = list()
-        labels = list()
-        blur_list = list()
         for itr, img_path in enumerate(list_of_images):
             image_values = list()
             [image_values.append(int(float(s))) for s in re.findall(r'-?\d+\.?\d*', es.split_path(img_path))]
             if int(image_values[0]) <= 1000:
                 orig_image = cv.imread(img_path, cv.IMREAD_COLOR)
-                blur_value = blur.BlurDetector.getBluring(orig_image)
-                if blur_value > 50:
-                    images.append(cv.resize(orig_image, (nrows, ncols), interpolation=cv.INTER_CUBIC))
-                    labels.append(int(image_values[0]))
-                    blur_list.append(blur_value)
-
-        value = sorted(zip(labels, blur_list))
+                for gamma_value in np.arange(0.5, 2.0, 0.25):
+                    adjusted = gamma.adjust_gamma(orig_image, gamma=gamma_value)
+                    blur_value_gamma = blur.BlurDetector.getBluring(adjusted)
+                    if blur_value_gamma > 50:
+                        if gamma_value != 1.0:
+                            adjusted = self.rotate_image(adjusted)
+                        self.images.append(cv.resize(adjusted, (nrows, ncols), interpolation=cv.INTER_CUBIC))
+                        self.labels.append(int(image_values[0]))
+                        self.blur_list.append(blur_value_gamma)
+                    else:
+                        self.wrong_img += 1
+        print("DataSet Size after augmentation: {}".format(len(self.images)))
+        print("Wrong image size: {}".format(self.wrong_img))
+        value = sorted(zip(self.labels, self.blur_list))
         height_val = list(map(lambda x: x[0], value))
         blur_val = list(map(lambda x: x[1], value))
 
-        plt.scatter(range(len(images)), blur_val, s=3, edgecolors='none', c='blue')
-        plt.scatter(range(len(images)), height_val, s=3, edgecolors='none', c='green')
-        for step_value in range(0,len(images),200):
-            plt.plot([step_value, step_value],
-                     [0, 1000],
-                     color='red', linestyle='dashed',
-                     marker='o', markerfacecolor='blue', markersize=0.2)
-        # plt.legend()
-        # plt.figure()
+        fig, axs = plt.subplots(2)
+        axs[0].scatter(range(len(self.images)), blur_val, s=3, edgecolors='none', c='blue')
+        axs[1].scatter(range(len(self.images)), height_val, s=3, edgecolors='none', c='green')
+        for step_value in range(0,len(self.images),1000):
+            axs[1].plot([step_value, step_value],
+                        [0, 1000],
+                        color='red', linestyle='dashed',
+                        marker='o', markerfacecolor='blue', markersize=1)
         plt.show()
-        return images, labels
+        return self.images, self.labels
 
     @timer
     def splitDataTrainAndTest(self, images, labels):
         np_images = np.array(images)
         np_labels = np.array(labels)
         image_train, image_test, label_train, label_test = train_test_split(np_images, np_labels, test_size=0.20, random_state=2)
+
+        for itr, img in enumerate(image_train):
+            cv.imshow("IMG", img)
+            print(label_train[itr])
+            cv.waitKey(0)
+
+
         image_train = image_train.astype('float32')
         image_test = image_test.astype('float32')
+
         label_train = label_train.astype('float32')
         label_test = label_test.astype('float32')
+
         image_train /= 255.0
         image_test /= 255.0
 
-        print(label_train.max())
+        self.max_height_label = label_train.max()
+        print(self.max_height_label)
 
         label_train /= label_train.max()
         label_test /= label_train.max()
+        print(type(image_test))
         return image_train, image_test, label_train, label_test
 
     @timer
@@ -98,28 +125,43 @@ class HeightEstimator:
     @timer
     def showTrainingTable(self, history):
         epochs = range(1, len(history.history['mean_squared_error']) + 1)
-
-        plt.plot(epochs, history.history['mean_squared_error'], 'b', label='Training accuracy')
-        plt.plot(epochs, history.history['val_mean_squared_error'], 'r', label='Validation accuracy')
-        plt.title('Training and Validation accuracy')
-        plt.legend()
-        plt.figure()
-
-        plt.plot(epochs, history.history['loss'], 'g', label='Training loss')
-        plt.plot(epochs, history.history['val_loss'], 'y', label='Validation loss')
-        plt.title('Training and Validation loss')
-        plt.legend()
+        fig, axs = plt.subplots(2)
+        axs[0].plot(epochs, history.history['mean_squared_error'], 'b', label='Training accuracy')
+        axs[0].plot(epochs, history.history['val_mean_squared_error'], 'r', label='Validation accuracy')
+        axs[0].set(title='Training and Validation accuracy',
+               ylabel='Value')
+        axs[1].plot(epochs, history.history['loss'], 'g', label='Training loss')
+        axs[1].plot(epochs, history.history['val_loss'], 'y', label='Validation loss')
+        axs[1].set(title='Training and Validation loss',
+               ylabel='Value')
         plt.show()
 
     @timer
     def predictHeight(self, model, image_test, label_test, image_train, label_train):
-        score = model.evaluate(image_test, label_test, verbose=0)
-        print('Test loss:', score[0])
-        print('Test accuracy:', score[1])
-        imgs_ts = image_test[0:50]
-        newValue = model.predict(imgs_ts, batch_size=1)
-        for itr, elem in enumerate(imgs_ts):
-            print(str(label_test[itr]) + str(newValue[itr]))
+        test_value = model.evaluate(image_test, label_test, verbose=0)
+        print('Test loss: {} / Test accuracy: {}'.format(test_value[0], test_value[1]))
+        predicted_height = model.predict(image_test, batch_size=1)
+
+        value = sorted(zip(label_test, predicted_height * self.max_height_label))
+        lbl_val = list(map(lambda x: x[0], value))
+        pred_val = list(map(lambda x: x[1], value))
+
+        fig, axs = plt.subplots(2)
+        axs[0].scatter(range(len(lbl_val)), pred_val, s=3, edgecolors='none', c='blue')
+        axs[0].scatter(range(len(lbl_val)), lbl_val, s=3, edgecolors='none', c='red')
+        plt.show()
+
+        for itr, elem in enumerate(image_test):
+            print("{} - {}".format(lbl_val[itr], pred_val[itr]))
+            cv.imshow("PredictedImage", elem)
+            cv.waitKey(0)
+
+    @timer
+    def loadWeights(self, model, path):
+        model.load_weights(path)
+        return model
+
+
     # def predictByImageSet(self, model):
     #     list_images = self.loadDataSet("./images2")
     #     images = list()
