@@ -22,6 +22,7 @@
 3. (Python) Portfolio - singlePage Djnago project.
 4. (C++) Temperature Detector - get person's body temperature from infrared camera (!Important! Need camera with linear contrasting algorithm)
 5. (Python) WebScrapping - parse english website's articles and get the main info.
+6. (Python) Predict plane height
 
 ### ML: (Python)
 1. Perseptron implementation
