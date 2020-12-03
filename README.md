@@ -26,6 +26,6 @@
 
 ### ML: (Python)
 1. Perseptron implementation
-2. Pandas + kNN
+2. Pandas + kNN 
 3. LinearRegression(PyTorch)
 4. LogisticRegression(PyTorch)
